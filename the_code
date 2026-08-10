@@ -1,0 +1,9 @@
+python -m venv venv	 | Membuat lingkungan Python terpisah untuk project.
+.\venv\Scripts\Activate.ps1	| Mengaktifkan virtual environment agar menggunakan library khusus project.
+pip install psutil	| Menginstal library untuk membaca informasi sistem dan hardware.
+pip list	| Menampilkan daftar library yang terpasang.
+pip freeze > requirements.txt	| Menyimpan daftar library project ke file requirements.
+pip install -r requirements.txt	| Menginstal seluruh library dari file requirements.
+python dashboard.py	| Menjalankan program Python.
+import tkinter as tk | Mengimpor library untuk membuat GUI desktop.
+pyinstaller --onefile --windowed dashboard.py |	Mengubah program Python menjadi file .exe.
