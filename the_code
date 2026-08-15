@@ -7,3 +7,34 @@ pip install -r requirements.txt	| Menginstal seluruh library dari file requireme
 python dashboard.py	| Menjalankan program Python.
 import tkinter as tk | Mengimpor library untuk membuat GUI desktop.
 pyinstaller --onefile --windowed dashboard.py |	Mengubah program Python menjadi file .exe.
+python3 --version  |   Cek Python:
+pip install flask   |  Install Flask:
+python3 python.py   |   menJalankan Program
+pip3 --version      |     cek versi pip
+docker --version    |     cek docker
+pip3 show flask     |     cek flask
+pip3 list           |     cek daftar library python
+sudo apt install python3-venv      |     install venv
+python3 -m venv venv               |     buat venv di folder
+source venv/bin/activate           |     nyalakan venv
+docker build -t monitoring-app .   |     download image Python
+docker images      |      cek image
+docker run monitoring-app       |        Menjalankan aplikasi dari image:
+docker run -p 5000:5000 monitoring-app                |                  Menjalankan aplikasi dari image bedasarkan port
+pip show psutil    |      install pibrary psutil
+docker volume create monitoring-data  |  menjalankan docker volume
+docker run -p 5000:5000 -v monitoring-data:/app monitoring-app     |     jalankan aplikasi dengan docker volume
+docker volume ls            |            Melihat Daftar Volume
+docker ps        |        Melihat Container Aktif
+docker rm container_id         |         hapus container
+docker stop container          |         menghentikan container
+docker network create monitoring-network                |                 membuat docker network
+docker network ls           |            melihat daftar dopcker network
+docker run -p 5000:5000 --network monitoring-network --name monitoring-app-container monitoring-app     Membuat dan menjalankan container dari image
+docker inspect monitoring-app-container                 |                 melihat seluruh informasi container.
+docker network inspect monitoring-network               |                 melihat detail network yang baru dibuat
+docker start monitoring-container   |    menyalakan container
+docker exec -it monitoring-mysql mysql -u root -p           |             masuk ke MySQL
+docker compose up -d         |           menyalakan docker compose
+docker logs monitoring-container                      |                   melihat output/log dari container
+docker compose down           |          menghentikan dan menghapus container
