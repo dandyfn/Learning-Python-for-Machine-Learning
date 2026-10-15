@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMK Negeri 2 Malang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 20s linear infinite;
+    }
+    .animate-marquee:hover { animation-play-state: paused; }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased overflow-x-hidden">
+
+  <!-- 1. TOP BAR INFORMASI -->
+  <div class="bg-slate-900 text-slate-700 text-xs py-2 px-6 border-b border-slate-800 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <p>📍 Jl. Veteran No. 17, Malang, Jawa Timur | 📞 (0341) 551504</p>
+      <div class="flex gap-4 font-medium">
+        <a href="#" class="hover:text-amber-400 transition">BKK (Bursa Kerja)</a>
+        <span>•</span>
+        <a href="#" class="hover:text-amber-400 transition">PPDB 2026/2027</a>
+      </div>
+    </div>
+  </div>
+
+<!-- HEADER NAVBAR UTAMA -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-10 h-10 rounded-xl bg-amber-500 border border-amber-600 flex items-center justify-center font-black text-slate-950 shadow-md group-hover:bg-slate-950 group-hover:text-amber-400 transition duration-300">
+        N2
+      </div>
+      <div class="flex flex-col">
+        <span class="font-black text-slate-900 text-lg tracking-wider leading-none">SMKN 2</span>
+        <span class="text-[10px] font-bold text-amber-600 tracking-widest uppercase mt-1">MALANG</span>
+      </div>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1 font-semibold text-sm">
+      
+      <a href="#" class="px-4 py-2 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-100 transition">
+        Beranda
+      </a>
+
+      <div class="relative group">
+        <button class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-slate-700 hover:text-amber-600 group-hover:bg-slate-100 transition">
+          <span>Tentang</span>
+          <svg class="w-4 h-4 text-slate-500 group-hover:text-amber-600 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 w-56">
+          <div class="bg-white border border-slate-200 rounded-2xl p-2 shadow-xl ring-1 ring-black/5">
+            <a href="#profil" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-50 hover:border-l-2 hover:border-amber-500 transition">
+              <span class="text-xs font-bold text-amber-600">01</span> Profil Singkat
+            </a>
+            <a href="#organisasi" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-50 hover:border-l-2 hover:border-amber-500 transition">
+              <span class="text-xs font-bold text-amber-600">02</span> Organisasi
+            </a>
+            <a href="#prestasi" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-50 hover:border-l-2 hover:border-amber-500 transition">
+              <span class="text-xs font-bold text-amber-600">03</span> Prestasi
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <button class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-slate-700 hover:text-amber-600 group-hover:bg-slate-100 transition">
+          <span>Akademik</span>
+          <svg class="w-4 h-4 text-slate-500 group-hover:text-amber-600 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="absolute left-0 top-full pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 w-56">
+          <div class="bg-white border border-slate-200 rounded-2xl p-2 shadow-xl ring-1 ring-black/5">
+            <a href="#beasiswa" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-50 hover:border-l-2 hover:border-amber-500 transition">
+              <span class="text-xs font-bold text-amber-600">01</span> Beasiswa
+            </a>
+            <a href="#kalender" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-50 hover:border-l-2 hover:border-amber-500 transition">
+              <span class="text-xs font-bold text-amber-600">02</span> Kalender Akademik
+            </a>
+            <a href="#ekstrakurikuler" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-50 hover:border-l-2 hover:border-amber-500 transition">
+              <span class="text-xs font-bold text-amber-600">03</span> Ekstrakurikuler
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#keahlian" class="px-4 py-2 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-100 transition">
+        Konsentrasi Keahlian
+      </a>
+
+      <a href="#fasilitas" class="px-4 py-2 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-100 transition">
+        Fasilitas
+      </a>
+
+      <a href="#kontak" class="px-4 py-2 rounded-xl text-slate-700 hover:text-amber-600 hover:bg-slate-100 transition">
+        Kontak
+      </a>
+
+    </nav>
+
+    <div class="hidden md:flex items-center gap-3">
+      <a href="#ppdb" class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs uppercase tracking-wider transition shadow-md shadow-amber-500/20">
+        Portal PPDB
+      </a>
+    </div>
+
+  </div>
+</header>
+
+  <!-- 3. HERO & KEUNGGULAN SECTION -->
+  <div class="relative min-h-[180vh]">
+    <div class="sticky top-20 h-[calc(100vh-5rem)] w-full overflow-hidden -z-10">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-900/30 z-10"></div>
+      <img
+        src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80" 
+        alt="Gedung Depan SMKN 2 Malang" 
+        class="w-full h-full object-cover object-center scale-105 transition-transform duration-700"
+      />
+    </div>
+
+    <div class="relative z-20 -mt-[calc(100vh-5rem)]">
+      <section class="h-[calc(100vh-5rem)] flex items-center justify-center px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+          <span class="inline-block bg-amber-400 text-slate-950 text-xs sm:text-sm font-black px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider shadow-lg">
+            Empowering Future Professionals
+          </span>
+          <h2 class="text-4xl sm:text-6xl font-black text-white leading-tight tracking-tight mb-6 drop-shadow-md">
+            Membentuk Generasi Unggul, Mandiri, dan <span class="text-amber-400">Siap Kerja</span>
+          </h2>
+          <p class="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-8 font-normal drop-shadow">
+            SMK Negeri 2 Malang menghadirkan pendidikan kejuruan berstandar industri dengan 6 konsentrasi keahlian unggulan.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#kenapa-smkn2" class="bg-blue-900 hover:bg-blue-800 text-white font-bold px-7 py-3.5 rounded-xl shadow-xl transition border border-blue-700">
+              Jelajahi SMKN 2 Malang ↓
+            </a>
+            <button class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-2 border-white/40 font-bold px-7 py-3.5 rounded-xl transition">
+              Lihat Video Profil
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="kenapa-smkn2" class="min-h-[80vh] flex items-center justify-center px-6 py-20">
+        <div class="max-w-6xl mx-auto w-full">
+          <div class="text-center mb-12">
+            <span class="text-xs font-black uppercase tracking-widest text-amber-400 bg-slate-900/80 backdrop-blur px-3 py-1 rounded border border-slate-700 inline-block mb-3">Keunggulan Utama</span>
+            <h3 class="text-3xl sm:text-5xl font-black text-white drop-shadow-lg">Kenapa Harus SMKN 2 Malang?</h3>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 p-8 rounded-2xl text-white shadow-2xl hover:border-amber-400 transition group">
+              <div class="w-12 h-12 bg-amber-400 text-slate-900 rounded-xl flex items-center justify-center font-black text-xl mb-6 group-hover:scale-110 transition">1</div>
+              <h4 class="text-xl font-bold mb-3 text-white">Standar Industri DUDI</h4>
+              <p class="text-slate-300 text-sm leading-relaxed">Kurikulum terintegrasi langsung dengan puluhan mitra perusahaan nasional & internasional.</p>
+            </div>
+            <div class="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 p-8 rounded-2xl text-white shadow-2xl hover:border-amber-400 transition group">
+              <div class="w-12 h-12 bg-amber-400 text-slate-900 rounded-xl flex items-center justify-center font-black text-xl mb-6 group-hover:scale-110 transition">2</div>
+              <h4 class="text-xl font-bold mb-3 text-white">6 Konsentrasi Unggulan</h4>
+              <p class="text-slate-300 text-sm leading-relaxed">Fasilitas ruang praktik modern untuk Perhotelan, Kuliner, Keperawatan, TKJ, Wisata, dan PKS.</p>
+            </div>
+            <div class="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 p-8 rounded-2xl text-white shadow-2xl hover:border-amber-400 transition group">
+              <div class="w-12 h-12 bg-amber-400 text-slate-900 rounded-xl flex items-center justify-center font-black text-xl mb-6 group-hover:scale-110 transition">3</div>
+              <h4 class="text-xl font-bold mb-3 text-white">Penyaluran Kerja BKK</h4>
+              <p class="text-slate-300 text-sm leading-relaxed">Bursa Kerja Khusus (BKK) aktif mendampingi alumni hingga terserap penuh di DUDI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- 4. DAFTAR MITRA INDUSTRI -->
+  <section id="mitra" class="relative z-30 bg-white border-y border-slate-200 py-10 shadow-xl overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-6">
+      <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest">Dipercaya oleh Mitra Industri dan Dunia Kerja (DUDI)</h3>
+    </div>
+    <div class="flex overflow-hidden select-none">
+      <div class="animate-marquee flex gap-4 items-center">
+        <div class="flex gap-4 items-center text-slate-800 font-extrabold text-xs">
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">SAMSUNG</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">RUKUN SENIOR LIVING</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">GRAND MERCURE</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">MARUGAME UDON</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">BRAWIJAYA MULTI USAHA</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">FAVEHOTEL</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">ASTON MALANG</span>
+        </div>
+        <div class="flex gap-4 items-center text-slate-800 font-extrabold text-xs">
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">SAMSUNG</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">RUKUN SENIOR LIVING</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">GRAND MERCURE</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">MARUGAME UDON</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">BRAWIJAYA MULTI USAHA</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">FAVEHOTEL</span>
+          <span class="px-6 py-3 bg-slate-50 border border-slate-200 rounded-xl shadow-sm whitespace-nowrap">ASTON MALANG</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================== -->
+  <!-- 5. SAMBUTAN (STICKY LAYER) & BERITA + TESTIMONI (OVERLAY SWIPE NAIK) -->
+  <!-- =================================================================== -->
+  <div id="curtain-section" class="relative z-30 bg-slate-900">
+    
+    <!-- STICKY BASE LAYER: SAMBUTAN KEPALA SEKOLAH -->
+    <div class="sticky top-20 h-[calc(100vh-5rem)] bg-slate-100 flex items-center justify-center px-6 overflow-hidden">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 items-center w-full">
+        <div class="md:col-span-5">
+          <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-xl text-center">
+            <div class="w-full h-64 bg-slate-200 rounded-2xl mb-4 flex items-center justify-center text-slate-400 font-semibold">
+              [ Foto Kepala Sekolah ]
+            </div>
+            <h4 class="font-extrabold text-slate-900 text-lg">Bapak Slamet Winarto, M.Pd</h4>
+            <p class="text-xs font-bold text-amber-600 uppercase tracking-widest mt-1">Kepala SMKN 2 Malang</p>
+          </div>
+        </div>
+
+        <div class="md:col-span-7 space-y-4">
+          <span class="inline-block text-xs font-black text-amber-600 bg-amber-100 border border-amber-300 px-3 py-1 rounded-md uppercase tracking-wider">
+            Pesan Pimpinan
+          </span>
+          <h3 class="text-3xl sm:text-4xl font-black text-slate-900 leading-tight">
+            Selamat Datang di Portal Resmi SMKN 2 Malang
+          </h3>
+          <div class="bg-white border-l-4 border-amber-500 p-5 rounded-r-2xl shadow-sm">
+            <p class="text-slate-700 italic text-sm leading-relaxed">
+              "Menyiapkan generasi masa depan tidak hanya soal keterampilan teknis, melainkan pembentukan karakter yang adaptif dan berintegritas."
+            </p>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Perkembangan teknologi mendorong kami untuk terus bertransformasi menyajikan layanan pendidikan transparan, modern, dan mudah diakses.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERLAY LAYER NAIK: BERITA TERBARU & KEPERCAYAAN PUBLIK (FLOW NORMAL SEBAGAI SATU BLOK) -->
+    <div class="relative z-10 shadow-[0_-30px_50px_rgba(0,0,0,0.8)]">
+      
+      <!-- BERITA TERBARU -->
+      <section id="layer-berita" class="bg-slate-900 text-white py-24 px-6 sm:px-20 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto w-full">
+          <div class="flex justify-between items-end mb-10">
+            <div>
+              <span class="text-xs font-black uppercase tracking-widest text-amber-400">Kabar Kampus</span>
+              <h3 class="text-3xl sm:text-4xl font-black text-white mt-1">Berita Terbaru</h3>
+            </div>
+            <a href="#" class="text-amber-400 font-bold text-sm hover:underline">Lihat Semua →</a>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl">
+              <div class="h-44 bg-slate-700 flex items-center justify-center text-slate-400 text-xs">[ Foto Berita 1 ]</div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-1 rounded mb-2 inline-block">Berita</span>
+                <h4 class="font-bold text-white text-base leading-snug">SMKN 2 Malang Tetapkan Komitmen Sekolah Asri</h4>
+                <p class="text-slate-400 text-xs mt-2">Mewujudkan lingkungan belajar yang sehat dan hijau.</p>
+              </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl">
+              <div class="h-44 bg-slate-700 flex items-center justify-center text-slate-400 text-xs">[ Foto Berita 2 ]</div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-1 rounded mb-2 inline-block">Kegiatan</span>
+                <h4 class="font-bold text-white text-base leading-snug">Petugas Upacara Raih Apresiasi Positif</h4>
+                <p class="text-slate-400 text-xs mt-2">Performa luar biasa dari tim Paskibra sekolah.</p>
+              </div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden shadow-xl">
+              <div class="h-44 bg-slate-700 flex items-center justify-center text-slate-400 text-xs">[ Foto Berita 3 ]</div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-2 py-1 rounded mb-2 inline-block">Industri</span>
+                <h4 class="font-bold text-white text-base leading-snug">Kunjungan Industri ke Grand Mercure</h4>
+                <p class="text-slate-400 text-xs mt-2">Mengenalkan standar kerja hospitality bintang lima.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>
+  /* Animasi Jalur Gelombang Kiri ke Tengah */
+  @keyframes waveLeft {
+    0% { stroke-dashoffset: 1000; opacity: 0.3; }
+    50% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: -1000; opacity: 0.3; }
+  }
+
+  /* Animasi Jalur Gelombang Kanan ke Tengah */
+  @keyframes waveRight {
+    0% { stroke-dashoffset: -1000; opacity: 0.3; }
+    50% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 1000; opacity: 0.3; }
+  }
+
+  /* Animasi Berdenyut di Titik Tengah */
+  @keyframes pulseCenter {
+    0%, 100% { transform: scale(0.85); opacity: 0.6; }
+    50% { transform: scale(1.25); opacity: 1; filter: drop-shadow(0 0 10px #fbbf24); }
+  }
+
+  .draw-wave-left {
+    stroke-dasharray: 1000;
+    animation: waveLeft 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .draw-wave-right {
+    stroke-dasharray: 1000;
+    animation: waveRight 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  .center-node {
+    transform-origin: center;
+    animation: pulseCenter 2.2s ease-in-out infinite;
+  }
+</style>
+
+<!-- STRIP ANIMASI BACKGROUND TERANG (HEIGHT 80PX) -->
+<div class="relative w-full h-[80px] bg-slate-800 border-y-2 border-amber-400/40 overflow-hidden shadow-md flex items-center justify-center z-20">
+  
+  <!-- PATTERN BINTIK BG (LEBIH TERANG & SEGAR) -->
+  <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#93c5fd 1.5px, transparent 1.5px); background-size: 18px 18px;"></div>
+
+  <!-- SVG GRAFIS ANIMASI -->
+  <svg class="relative z-10 w-full h-full" viewBox="0 0 1200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Gradien Garis Kiri -->
+      <linearGradient id="grad-left-light" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
+        <stop offset="70%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#fbbf24"/>
+      </linearGradient>
+      
+      <!-- Gradien Garis Kanan -->
+      <linearGradient id="grad-right-light" x1="100%" y1="0%" x2="0%" y2="0%">
+        <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.2"/>
+        <stop offset="70%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#fbbf24"/>
+      </linearGradient>
+    </defs>
+
+    <!-- GELOMBANG KIRI -->
+    <g class="draw-wave-left">
+      <!-- Utama (Putih & Emas Gradien) -->
+      <path d="M -50 40 Q 150 5, 300 75 T 600 40" stroke="url(#grad-left-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- Aksen Emas Putus-Putus -->
+      <path d="M -50 20 Q 150 65, 300 15 T 600 40" stroke="#fbbf24" stroke-width="1.8" stroke-dasharray="8 5" fill="none" opacity="0.85"/>
+      <!-- Aksen Biru Muda -->
+      <path d="M -50 60 Q 150 15, 300 65 T 600 40" stroke="#93c5fd" stroke-width="1.5" fill="none" opacity="0.7"/>
+    </g>
+
+    <!-- GELOMBANG KANAN -->
+    <g class="draw-wave-right">
+      <!-- Utama (Putih & Emas Gradien) -->
+      <path d="M 1250 40 Q 1050 75, 900 5 T 600 40" stroke="url(#grad-right-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- Aksen Emas Putus-Putus -->
+      <path d="M 1250 20 Q 1050 15, 900 65 T 600 40" stroke="#fbbf24" stroke-width="1.8" stroke-dasharray="8 5" fill="none" opacity="0.85"/>
+      <!-- Aksen Biru Muda -->
+      <path d="M 1250 60 Q 1050 65, 900 15 T 600 40" stroke="#93c5fd" stroke-width="1.5" fill="none" opacity="0.7"/>
+    </g>
+
+    <!-- PUSAT PERTEMUAN TENGAH -->
+    <g class="center-node">
+      <circle cx="600" cy="40" r="14" fill="#fbbf24" opacity="0.25" />
+      <circle cx="600" cy="40" r="7" fill="#fbbf24" />
+      <circle cx="600" cy="40" r="3" fill="#ffffff" />
+    </g>
+  </svg>
+</div>
+      
+      <!-- WRAPPER UNTUK PINNING KEPERCAYAAN PUBLIK LALU PUSAT INFORMASI GESER DARI KANAN -->
+      <div id="faq-parallax-wrapper" class="relative h-[200vh] bg-white">
+        <div class="sticky top-20 h-[calc(100vh-5rem)] w-full overflow-hidden">
+
+          <!-- KEPERCAYAAN PUBLIK (Langsung lanjut normal dari Berita) -->
+          <section id="layer-testimoni" class="absolute inset-0 z-10 bg-white text-slate-900 flex flex-col justify-center px-6 sm:px-20">
+            <div class="max-w-7xl mx-auto w-full">
+              <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-black uppercase tracking-widest text-blue-900 bg-blue-50 px-3 py-1 rounded mb-2 inline-block">Ulasan Publik</span>
+                <h3 class="text-3xl font-extrabold text-slate-900 mb-2">Kepercayaan Publik yang Terverifikasi</h3>
+                <p class="text-slate-600 text-sm">Ulasan langsung dari Google Maps tanpa manipulasi.</p>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="font-bold text-blue-600 text-lg">Google</span>
+                    <div class="text-amber-400 text-sm">★★★★★</div>
+                  </div>
+                  <p class="text-slate-600 text-sm leading-relaxed italic">
+                    "SMKN 2 Malang tempat belajarnya sangat mendukung dan fasilitas memadai untuk sekolah kejuruan..."
+                  </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="font-bold text-blue-600 text-lg">Google</span>
+                    <div class="text-amber-400 text-sm">★★★★★</div>
+                  </div>
+                  <p class="text-slate-600 text-sm leading-relaxed italic">
+                    "SMK dgn konsentrasi bbrp ilmu,antara lain Jasa Boga, Perhotelan, Travel, Computer dll..."
+                  </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="font-bold text-blue-600 text-lg">Google</span>
+                    <div class="text-amber-400 text-sm">★★★★★</div>
+                  </div>
+                  <p class="text-slate-600 text-sm leading-relaxed italic">
+                    "Yang pasti disini ada banyak macam jurusan ya ada perhotelan, keperawatan, teknik komputer..."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+<!-- OVERLAY LAYER: PUSAT INFORMASI & FAQ (Menggeser dari KANAN) -->
+<section id="layer-faq" class="absolute inset-0 z-20 bg-slate-950 flex flex-col justify-center px-6 sm:px-20 transform translate-x-full transition-transform duration-75 ease-out shadow-[-30px_0_50px_rgba(0,0,0,0.8)] overflow-hidden">
+  
+  <!-- Background Foto Sekolah (Opacity dinaikkan jadi 65% agar lebih transparan/terlihat) -->
+  <div class="absolute inset-0 z-0 grid grid-cols-2 md:grid-cols-4 gap-2 opacity-65 scale-105 pointer-events-none">
+    <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Gedung SMKN 2">
+    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Siswa Beraktivitas">
+    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Praktikum Lab">
+    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Ruang Kelas">
+  </div>
+  
+  <!-- Lapisan Overlay Gradien Tipis & Tipis Transparan -->
+  <div class="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/50 via-slate-900/30 to-slate-950/60 backdrop-blur-[2px] pointer-events-none"></div>
+
+  <!-- Konten FAQ -->
+  <div class="relative z-20 max-w-7xl mx-auto w-full">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs font-black uppercase tracking-widest text-amber-400 bg-slate-900/80 border border-slate-700/80 px-4 py-1.5 rounded-full inline-block mb-3 shadow-xl backdrop-blur-md">
+        INFORMASI UTAMA
+      </span>
+      <h3 class="text-3xl sm:text-4xl font-black text-white mb-2 drop-shadow-lg">
+        Pusat Informasi & FAQ
+      </h3>
+      <p class="text-slate-200 text-sm font-medium bg-slate-900/50 backdrop-blur-md py-1.5 px-6 rounded-full inline-block border border-slate-700/50 shadow-md">
+        Jawaban cepat seputar pendaftaran, fasilitas, dan akademik.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-700/60 shadow-xl hover:border-amber-500/50 transition duration-300">
+        <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          Bagaimana prosedur pendaftaran siswa baru di SMKN 2 Malang?
+        </h4>
+        <p class="text-slate-200 text-sm leading-relaxed pl-4 border-l-2 border-amber-500/50">
+          Pendaftaran mengikuti jalur resmi PPDB Jatim secara online melalui portal resmi PPDB Jatim.
+        </p>
+      </div>
+
+      <div class="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-700/60 shadow-xl hover:border-amber-500/50 transition duration-300">
+        <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          Apa saja konsentrasi keahlian yang tersedia?
+        </h4>
+        <p class="text-slate-200 text-sm leading-relaxed pl-4 border-l-2 border-amber-500/50">
+          Tersedia Pekerjaan Sosial (PS), Perhotelan (PHT), Kuliner (KL), Usaha Layanan Wisata (ULW), Keperawatan (LPKC), dan TKJ.
+        </p>
+      </div>
+
+      <div class="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-700/60 shadow-xl hover:border-amber-500/50 transition duration-300">
+        <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          Apakah ada program beasiswa bagi siswa berprestasi?
+        </h4>
+        <p class="text-slate-200 text-sm leading-relaxed pl-4 border-l-2 border-amber-500/50">
+          Ya, SMKN 2 Malang menyediakan berbagai skema beasiswa baik dari pemerintah (KIP/BKSM) maupun bantuan kemitraan alumni/DUDI.
+        </p>
+      </div>
+
+      <div class="bg-slate-900/60 backdrop-blur-md p-6 rounded-2xl border border-slate-700/60 shadow-xl hover:border-amber-500/50 transition duration-300">
+        <h4 class="font-bold text-white mb-2 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          Di mana lokasi pelaksanaan praktik lapangan (PKL)?
+        </h4>
+        <p class="text-slate-200 text-sm leading-relaxed pl-4 border-l-2 border-amber-500/50">
+          Siswa ditempatkan di berbagai industri mitra bintang 4/5, rumah sakit, instansi pemerintah, dan perusahaan IT terkemuka.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 6. FOOTER -->
+  <footer class="relative z-40 bg-slate-900 text-slate-400 py-12 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8 mb-12">
+      <div>
+        <h5 class="text-white font-bold mb-4">Unit Produksi</h5>
+        <ul class="space-y-2">
+          <li>Edotel SMKN 2 Malang</li>
+          <li>K2 Cafe & Catering</li>
+          <li>K2 Laundry</li>
+          <li>K2 Komputer</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-4">Layanan Digital</h5>
+        <ul class="space-y-2">
+          <li>Sistem Informasi Akademik</li>
+          <li>E-Learning & E-Library</li>
+          <li>Bursa Kerja Khusus (BKK)</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-4">Tautan Terkait</h5>
+        <ul class="space-y-2">
+          <li>Kemdikbud RI</li>
+          <li>Dinas Pendidikan Prov Jatim</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="text-white font-bold mb-4">Kontak & Sosmed</h5>
+        <p class="text-xs mb-3">Jl. Veteran No. 17, Malang</p>
+        <p class="text-xs">Instagram: @smkn2malang</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center text-xs pt-6 border-t border-slate-800">
+      © 2026 SMK Negeri 2 Malang. Hak Cipta Dilindungi Undang-Undang.
+    </div>
+  </footer>
+
+  <!-- SCRIPT KENDALI SLIDE KANAN PUSAT INFORMASI (FAQ) -->
+  <script>
+    const faqWrapper = document.getElementById('faq-parallax-wrapper');
+    const layerFaq = document.getElementById('layer-faq');
+
+    window.addEventListener('scroll', () => {
+      if (!faqWrapper || !layerFaq) return;
+
+      const rect = faqWrapper.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const totalScrollableDistance = faqWrapper.offsetHeight - windowHeight;
+      const currentScroll = -rect.top;
+
+      let progress = currentScroll / totalScrollableDistance;
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Menggeser Pusat Informasi (FAQ) dari kanan ke kiri hanya saat Kepercayaan Publik ter-pinning di layar
+      const translateX = 100 - (progress * 100);
+      layerFaq.style.transform = `translateX(${translateX}%)`;
+    });
+  </script>
+</body>
+</html>
