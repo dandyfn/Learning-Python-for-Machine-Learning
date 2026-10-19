@@ -8,7 +8,7 @@ from datetime import datetime
 import paho.mqtt.client as mqtt
 
 # Konfigurasi broker MQTT lokal
-BROKER_HOST = "127.0.0.1"
+BROKER_HOST = "172.19.246.136"
 BROKER_PORT = 1883
 TOPIC = "sister/temp"
 
